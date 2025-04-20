@@ -1,0 +1,146 @@
+/* About Component Styles */
+
+.about-component {
+    padding: 5rem 0;
+    background-color: #fff;
+  }
+  
+  .about-component.compact {
+    padding: 3rem 0;
+  }
+  
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .about-subtitle {
+    font-size: 1.2rem;
+    color: #f8971d;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .about-description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #666;
+  }
+  
+  .about-link {
+    margin-top: 1.5rem;
+  }
+  
+  .about-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .about-image::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid #f8971d;
+    border-radius: 4px;
+    z-index: 1;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+  }
+  
+  .about-image:hover img {
+    transform: scale(1.05);
+  }
+  
+  .about-component.compact .about-text h2 {
+    font-size: 2rem;
+  }
+  
+  .about-component.compact .about-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 992px) {
+    .about-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .about-content.image-left {
+      grid-template-areas: "image content";
+    }
+  
+    .about-content.image-right {
+      grid-template-areas: "content image";
+    }
+  
+    .about-content.image-left .about-text {
+      grid-area: content;
+    }
+  
+    .about-content.image-left .about-image {
+      grid-area: image;
+    }
+  
+    .about-content.image-right .about-text {
+      grid-area: content;
+    }
+  
+    .about-content.image-right .about-image {
+      grid-area: image;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .about-content.image-left,
+    .about-content.image-right {
+      grid-template-areas:
+        "content"
+        "image";
+    }
+  
+    .about-text {
+      grid-area: content;
+    }
+  
+    .about-image {
+      grid-area: image;
+    }
+  
+    .about-text h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .about-component {
+      padding: 3rem 0;
+    }
+  
+    .about-component.compact {
+      padding: 2rem 0;
+    }
+  }
+  
